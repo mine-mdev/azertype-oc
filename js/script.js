@@ -3,6 +3,7 @@ function afficherResultat(score, total) {
     let message = "Score: " + score + "/" + total
     zoneDeScore.innerText = message
 }
+
 function afficherProposition(proposition) {
     let zoneDeProposition = document.querySelector(".zoneDeProposition")
     zoneDeProposition.innerText = proposition

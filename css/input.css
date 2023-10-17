@@ -22,15 +22,15 @@ p {
 }
 
 .zoneDeChoix input+label {
-    @apply font-poppins px-4 py-2 border border-dashed border-black cursor-pointer;
+    @apply font-poppins px-4 py-2 border border-secondaire cursor-pointer transition ease-out duration-500;
 }
 
 .zoneDeChoix input:checked+label {
-    @apply border-solid
+    @apply bg-secondaire text-white
 }
 
 .zoneDeSaisie input {
-    @apply py-2 px-4 border border-black w-full bg-none outline-none
+    @apply py-2 px-4 border border-secondaire w-full bg-none outline-none
 }
 
 .zoneDeSaisie button {
@@ -51,4 +51,20 @@ p {
 
 button {
     @apply font-poppins py-2 px-4 shadow-lg
+}
+
+.bgPopup {
+    @apply absolute top-0 left-0 right-0 bottom-0 bg-secondaire/40 px-6;
+}
+
+.popup {
+    @apply shadow w-3/4 bg-white p-6 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2
+}
+
+.popup form {
+    @apply text-sm;
+}
+
+.popup form input {
+    @apply py-1 px-2 border border-secondaire w-full bg-none outline-none
 }
