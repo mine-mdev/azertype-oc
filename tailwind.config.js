@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaire: "#FFC100"
+        primaire: "#FFC100",
+        secondaire: "#263238"
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -14,7 +15,7 @@ module.exports = {
         titre: "40px",
         texte: "20px",
         titre_mobile: "25px",
-        texte_mobile: "15px"
+        texte_mobile: "18px"
       }
     },
   },

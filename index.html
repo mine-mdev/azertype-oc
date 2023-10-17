@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/output.css">
     <title>Document</title>
-    <script src="js/config.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 
-<body class="text-texte_mobile md:text-texte">
+<body class="text-texte_mobile md:text-texte text-secondaire">
     <div class="h-screen">
-        <div class="grid lg:grid-cols-3 lg:gap-8 lg:h-full ">
+        <div class="grid lg:grid-cols-3 lg:gap-8 lg:h-full p-4">
 
-            <div class="lg:col-span-1 lg:m-auto bg-primaire lg:bg-transparent py-4  ">
+            <div class="lg:col-span-1 lg:m-auto  ">
                 <img src="images/type.png" alt="type.png" class="w-1/2 lg:w-full">
             </div>
 
-            <div class="p-4 lg:h-full flex items-center lg:col-span-2   lg:mt-0">
+            <div class="lg:h-full flex items-center lg:col-span-2   lg:mt-0">
                 <div>
                     <header>
                         <h1 class="lg:text-titre"> AZERTYPE,
@@ -34,20 +34,23 @@
                         <p>
                             Choisissez une option et tapez la proposition qui s'affiche dans le champs ci-dessous.
                         </p>
-                        <div class="zoneDeChoix mt-6">
+                        <div class="zoneDeChoix mt-8">
                             <input type="radio" name="option" id="mots" value="mots" checked>
                             <label for="mots"> Mots</label>
                             <input type="radio" name="option" id="phrases" value="phrases">
                             <label for="phrases"> Phrases</label>
                         </div>
+
                         <div class="zoneDeProposition mt-6"></div>
-                        <div class="zoneDeSaisie mt-6 flex items-center ">
-                            <input type="text" id="sasie" class="focus: ">
-                            <button class="transition ease-out duration-500 hover:shadow-primaire/40"> Valider </button>
+
+                        <div class="zoneDeSaisie mt-4 flex items-center ">
+                            <input type="text">
+                            <button class="active" id="validation">
+                                Valider </button>
                         </div>
-                        <div class="zoneDeScore mt-6"></div>
+                        <div class="zoneDeScore mt-4"></div>
                         <button
-                            class="transition ease-out duration-500 hover:-translate-y-2 hover:shadow-primaire/40">Partager</button>
+                            class="transition ease-out duration-500 hover:-translate-y-2 hover:shadow-primaire/40 mt-6">Partager</button>
 
                         <div class="backgroundpopup">
                             <div class="popup">

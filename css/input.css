@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    @apply select-none;
+}
+
 h1 {
     @apply font-poppins text-titre_mobile font-semibold;
 }
@@ -30,14 +34,20 @@ p {
 }
 
 .zoneDeSaisie button {
-    @apply bg-primaire text-white ml-4;
+    @apply text-white ml-4;
 }
 
 .zoneDeScore+button {
     @apply text-primaire border border-primaire;
 }
 
+.active {
+    @apply bg-primaire
+}
 
+.desactive {
+    @apply bg-secondaire/30;
+}
 
 button {
     @apply font-poppins py-2 px-4 shadow-lg

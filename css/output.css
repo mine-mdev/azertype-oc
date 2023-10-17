@@ -538,8 +538,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-6{
   margin-top: 1.5rem;
+}
+
+.mt-8{
+  margin-top: 2rem;
 }
 
 .flex{
@@ -550,58 +558,29 @@ video {
   display: grid;
 }
 
-.hidden{
-  display: none;
-}
-
 .h-screen{
   height: 100vh;
-}
-
-.h-full{
-  height: 100%;
 }
 
 .w-1\/2{
   width: 50%;
 }
 
-.grid-cols-2{
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .items-center{
   align-items: center;
-}
-
-.bg-primaire{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 193 0 / var(--tw-bg-opacity));
 }
 
 .p-4{
   padding: 1rem;
 }
 
-.p-2{
-  padding: 0.5rem;
-}
-
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.text-right{
-  text-align: right;
-}
-
 .text-texte_mobile{
-  font-size: 15px;
+  font-size: 18px;
 }
 
-.text-titre_mobile{
-  font-size: 25px;
+.text-secondaire{
+  --tw-text-opacity: 1;
+  color: rgb(38 50 56 / var(--tw-text-opacity));
 }
 
 .transition{
@@ -618,6 +597,12 @@ video {
 
 .ease-out{
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+*{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 h1{
@@ -668,8 +653,6 @@ p{
 
 .zoneDeSaisie button{
   margin-left: 1rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 193 0 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -680,6 +663,15 @@ p{
   border-color: rgb(255 193 0 / var(--tw-border-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 193 0 / var(--tw-text-opacity));
+}
+
+.active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 193 0 / var(--tw-bg-opacity));
+}
+
+.desactive{
+  background-color: rgb(38 50 56 / 0.3);
 }
 
 button{
@@ -726,10 +718,6 @@ button{
     margin-top: 0px;
   }
 
-  .lg\:hidden{
-    display: none;
-  }
-
   .lg\:h-full{
     height: 100%;
   }
@@ -738,24 +726,12 @@ button{
     width: 100%;
   }
 
-  .lg\:grid-cols-1{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:gap-8{
     gap: 2rem;
-  }
-
-  .lg\:bg-transparent{
-    background-color: transparent;
-  }
-
-  .lg\:bg-none{
-    background-image: none;
   }
 
   .lg\:text-titre{
