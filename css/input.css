@@ -6,9 +6,39 @@
 @tailwind utilities;
 
 h1 {
-    @apply font-poppins text-titre font-semibold;
+    @apply font-poppins text-titre_mobile font-semibold;
 }
 
 p {
-    @apply font-nunito text-texte font-light;
+    @apply font-nunito font-light;
+}
+
+.zoneDeChoix input {
+    @apply hidden;
+}
+
+.zoneDeChoix input+label {
+    @apply font-poppins px-4 py-2 border border-dashed border-black cursor-pointer;
+}
+
+.zoneDeChoix input:checked+label {
+    @apply border-solid
+}
+
+.zoneDeSaisie input {
+    @apply py-2 px-4 border border-black w-full bg-none outline-none
+}
+
+.zoneDeSaisie button {
+    @apply bg-primaire text-white ml-4;
+}
+
+.zoneDeScore+button {
+    @apply text-primaire border border-primaire;
+}
+
+
+
+button {
+    @apply font-poppins py-2 px-4 shadow-lg
 }

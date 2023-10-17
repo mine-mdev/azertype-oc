@@ -12,7 +12,9 @@ module.exports = {
       },
       fontSize: {
         titre: "40px",
-        texte: "20px"
+        texte: "20px",
+        titre_mobile: "25px",
+        texte_mobile: "15px"
       }
     },
   },
