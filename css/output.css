@@ -542,10 +542,6 @@ video {
   position: relative;
 }
 
-.mt-2{
-  margin-top: 0.5rem;
-}
-
 .mt-4{
   margin-top: 1rem;
 }
@@ -582,8 +578,21 @@ video {
   align-items: center;
 }
 
+.border-t{
+  border-top-width: 1px;
+}
+
+.border-secondaire{
+  --tw-border-opacity: 1;
+  border-color: rgb(38 50 56 / var(--tw-border-opacity));
+}
+
 .p-4{
   padding: 1rem;
+}
+
+.pt-4{
+  padding-top: 1rem;
 }
 
 .text-texte_mobile{
@@ -642,10 +651,10 @@ p{
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(38 50 56 / var(--tw-border-opacity));
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-family: Poppins, sans-serif;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -662,16 +671,17 @@ p{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.zoneDeSaisie input{
+input[type="text"],
+input[type="email"]{
   width: 100%;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(38 50 56 / var(--tw-border-opacity));
   background-image: none;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -700,70 +710,35 @@ p{
 }
 
 button{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-family: Poppins, sans-serif;
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.bgPopup{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background-color: rgb(38 50 56 / 0.4);
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.popup{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 75%;
-  --tw-translate-y: -50%;
-  --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  padding: 1.5rem;
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.popup form{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.popup form input{
-  width: 100%;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(38 50 56 / var(--tw-border-opacity));
-  background-image: none;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  font-family: Poppins, sans-serif;
 }
 
-.hover\:-translate-y-2:hover{
-  --tw-translate-y: -0.5rem;
+#erreur{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity));
+}
+
+footer p{
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+
+.hover\:-translate-y-1:hover{
+  --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:shadow-primaire\/40:hover{
-  --tw-shadow-color: rgb(255 193 0 / 0.4);
-  --tw-shadow: var(--tw-shadow-colored);
+.hover\:shadow-2xl:hover{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 @media (min-width: 768px){
@@ -781,20 +756,12 @@ button{
     grid-column: span 2 / span 2;
   }
 
-  .lg\:m-auto{
-    margin: auto;
-  }
-
   .lg\:mt-0{
     margin-top: 0px;
   }
 
   .lg\:h-full{
     height: 100%;
-  }
-
-  .lg\:w-1\/3{
-    width: 33.333333%;
   }
 
   .lg\:w-full{
@@ -807,6 +774,10 @@ button{
 
   .lg\:gap-8{
     gap: 2rem;
+  }
+
+  .lg\:p-8{
+    padding: 2rem;
   }
 
   .lg\:text-titre{
