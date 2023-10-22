@@ -35,15 +35,22 @@ input[type="email"] {
 }
 
 .zoneDeSaisie button {
-    @apply text-white ml-4;
+    @apply ml-4;
 }
 
-.zoneDeScore+button {
+
+
+.zoneDeBouton button:first-child {
     @apply text-primaire border border-primaire;
 }
 
-.active {
-    @apply bg-primaire
+.active,
+.zoneDeBouton button:last-child {
+    @apply bg-primaire text-white
+}
+
+.zoneDeBouton button:last-child {
+    @apply ml-2
 }
 
 .desactive {
@@ -56,7 +63,7 @@ button {
 
 
 #erreur {
-    @apply text-sm text-red-400;
+    @apply text-sm text-red-400 mt-4;
 }
 
 footer p {

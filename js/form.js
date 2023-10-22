@@ -1,10 +1,10 @@
+let formulaire = document.querySelector(".formulaire")
+let boutonPartager = document.querySelector(".zoneDeBouton button:first-child")
 function basculerFormulaire() {
-    let boutonPartager = document.querySelector(".zoneDeScore + button")
-    let formulaire = document.querySelector(".formulaire")
-    boutonPartager.addEventListener("click", () => {
-        formulaire.classList.remove("hidden")
-    })
+    formulaire.classList.toggle("hidden")
 }
 
-basculerFormulaire()
+boutonPartager.addEventListener("click", basculerFormulaire)
+
+
 

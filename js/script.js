@@ -1,12 +1,46 @@
-function afficherMessageErreur(message) {
-    let span = document.getElementById("erreur")
-    if (!span) {
-        let popup = document.querySelector(".formulaire")
-        span = document.createElement("span")
-        span.id = "erreur"
-        popup.appendChild(span)
+let i = 0
+let score = 0
+let listePropositions = listeMots
+let boutonValidation = document.querySelector(".zoneDeSaisie button")
+let inputTextSaisie = document.querySelector(".zoneDeSaisie input[type='text']")
+let div = document.querySelector(".zoneDeBouton")
+
+function rejouerJeu() {
+    score = 0
+    i = 0
+    inputTextSaisie.disabled = false
+    boutonValidation.disabled = false
+
+    boutonValidation.classList.remove("desactive")
+    boutonValidation.classList.add("active")
+
+    div.classList.remove("flex")
+    div.classList.add("hidden")
+    if (!formulaire.classList.contains("hidden")) {
+        formulaire.classList.add("hidden")
     }
-    span.textContent = message
+    inputTextSaisie.focus()
+    afficherProposition(listePropositions[i])
+    afficherResultat(score, i)
+}
+
+function terminerJeu() {
+    boutonValidation.disabled = true
+    inputTextSaisie.disabled = true
+    boutonValidation.classList.remove("active")
+    boutonValidation.classList.add("desactive")
+    div.classList.remove("hidden")
+    div.classList.add("flex")
+}
+
+function afficherMessageErreur(message) {
+    let p = document.getElementById("erreur")
+    if (!p) {
+        p = document.createElement("p")
+        p.id = "erreur"
+        formulaire.appendChild(p)
+    }
+    p.textContent = message
 }
 
 function afficherEmail(nom, email, score) {
@@ -54,23 +88,15 @@ function gererFormulaire(score) {
 
 function lancerJeu() {
     let listeInputRadioChoix = document.querySelectorAll(".zoneDeChoix input[type='radio']")
-    let boutonValidation = document.querySelector(".zoneDeSaisie button")
-    let inputTextSaisie = document.querySelector(".zoneDeSaisie input[type='text']")
-    let i = 0
-    let score = 0
-    let choix = ""
-    let listePropositions = listeMots
-    let formulaire = document.querySelector("form")
+    let boutonRejouer = document.querySelector(".zoneDeBouton button:last-child")
 
-    formulaire.addEventListener("submit", (event) => {
-        event.preventDefault()
-        let emailScore = `${score}/${i}`
-        gererFormulaire(emailScore)
-    })
+    inputTextSaisie.focus()
+    afficherResultat(score, i)
+    afficherProposition(listePropositions[i])
 
     for (let j = 0; j < listeInputRadioChoix.length; j++) {
         listeInputRadioChoix[j].addEventListener("change", (event) => {
-            choix = event.target.value;
+            let choix = event.target.value;
             if (choix === "mots") {
                 listePropositions = listeMots
             } else {
@@ -81,9 +107,6 @@ function lancerJeu() {
     }
 
 
-    afficherResultat(score, i)
-    afficherProposition(listePropositions[i])
-
     boutonValidation.addEventListener("click", () => {
         if (inputTextSaisie.value.trim() === listePropositions[i]) {
             score += 1
@@ -92,19 +115,20 @@ function lancerJeu() {
         inputTextSaisie.value = ""
         i++
         afficherResultat(score, i)
+        inputTextSaisie.focus()
 
         if (listePropositions[i] === undefined) {
-            boutonValidation.disabled = true
-            boutonValidation.classList.remove("active")
-            boutonValidation.classList.add("desactive")
+            terminerJeu()
         }
         afficherProposition(listePropositions[i])
-
-
     })
 
+    formulaire.addEventListener("submit", (event) => {
+        event.preventDefault()
+        let emailScore = `${score}/${i}`
+        gererFormulaire(emailScore)
+    })
 
-
-
+    boutonRejouer.addEventListener("click", rejouerJeu)
 
 }

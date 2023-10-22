@@ -688,11 +688,9 @@ input[type="email"]{
 
 .zoneDeSaisie button{
   margin-left: 1rem;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.zoneDeScore+button{
+.zoneDeBouton button:first-child{
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(255 193 0 / var(--tw-border-opacity));
@@ -700,9 +698,16 @@ input[type="email"]{
   color: rgb(255 193 0 / var(--tw-text-opacity));
 }
 
-.active{
+.active,
+.zoneDeBouton button:last-child{
   --tw-bg-opacity: 1;
   background-color: rgb(255 193 0 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.zoneDeBouton button:last-child{
+  margin-left: 0.5rem;
 }
 
 .desactive{
@@ -718,6 +723,7 @@ button{
 }
 
 #erreur{
+  margin-top: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   --tw-text-opacity: 1;
