@@ -80,6 +80,7 @@ function afficherCompteur() {
     if (compteur === 0) {
         clearInterval(setIntervalID)
         terminerJeu()
+        afficherProposition("Le jeu est terminé !")
     }
     compteur--
 }
