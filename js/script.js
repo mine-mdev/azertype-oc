@@ -1,6 +1,9 @@
 let i = 0
 let score = 0
+let compteur = 30
+let setIntervalID = null;
 let listePropositions = listeMots
+
 let boutonValidation = document.querySelector(".zoneDeSaisie button")
 let inputTextSaisie = document.querySelector(".zoneDeSaisie input[type='text']")
 let div = document.querySelector(".zoneDeBouton")
@@ -8,6 +11,8 @@ let div = document.querySelector(".zoneDeBouton")
 function rejouerJeu() {
     score = 0
     i = 0
+    compteur = 30
+    setIntervalID = null
     inputTextSaisie.disabled = false
     boutonValidation.disabled = false
 
@@ -19,9 +24,11 @@ function rejouerJeu() {
     if (!formulaire.classList.contains("hidden")) {
         formulaire.classList.add("hidden")
     }
+    inputTextSaisie.value = ""
     inputTextSaisie.focus()
+    afficherCompteur()
     afficherProposition(listePropositions[i])
-    afficherResultat(score, i)
+    afficherScore(score, i)
 }
 
 function terminerJeu() {
@@ -61,10 +68,20 @@ function validerEmail(email) {
     }
 }
 
-function afficherResultat(score, total) {
+function afficherScore(score, total) {
     let zoneDeScore = document.querySelector(".zoneDeScore")
     let message = "Score: " + score + "/" + total
     zoneDeScore.innerText = message
+}
+
+function afficherCompteur() {
+    let zoneDeCompteur = document.querySelector(".zoneDeCompteur")
+    zoneDeCompteur.innerText = `Compteur: ${compteur}`
+    if (compteur === 0) {
+        clearInterval(setIntervalID)
+        terminerJeu()
+    }
+    compteur--
 }
 
 function afficherProposition(proposition) {
@@ -91,7 +108,9 @@ function lancerJeu() {
     let boutonRejouer = document.querySelector(".zoneDeBouton button:last-child")
 
     inputTextSaisie.focus()
-    afficherResultat(score, i)
+
+    afficherScore(score, i)
+    afficherCompteur()
     afficherProposition(listePropositions[i])
 
     for (let j = 0; j < listeInputRadioChoix.length; j++) {
@@ -108,13 +127,17 @@ function lancerJeu() {
 
 
     boutonValidation.addEventListener("click", () => {
+        if (setIntervalID === null) {
+            setIntervalID = setInterval(afficherCompteur, 1000)
+        }
+
         if (inputTextSaisie.value.trim() === listePropositions[i]) {
             score += 1
         }
 
         inputTextSaisie.value = ""
         i++
-        afficherResultat(score, i)
+        afficherScore(score, i)
         inputTextSaisie.focus()
 
         if (listePropositions[i] === undefined) {

@@ -1,2 +1,2 @@
-const listeMots = ["Cachalot", "Pétunia", "Serviette"]
-const listPhrases = ["Pas de panique !", "La vie, l'univers et le reste", "Merci pour le poisson"]
+const listeMots = ["Cachalot", "Pétunia", "Serviette", "Pendre", "Croc", "Tranche", "Brique", "Servir", "Saison", "Poche"]
+const listPhrases = ["Jean Dujardin au sommet de sa forme renonce !", "Pas de panique !", "La vie, l'univers et le reste.", "Laurent Joffrin s'occupe de fromages.", "Merci pour le poisson.", "Plus de non-fumeuses n'atterrissaient plus.", "Les rebelles ashkénazes ferment les billets de banque.", "Tu t'ennuies à combiner la table du salon avec des meringues.", "Un paquet d'électrices ne s'attachent plus à la franc-maçonne !", "Les passagers irriguent les écuyères décoiffées à l'ouest.", "Les aide-soignantes avoueront se relever."]

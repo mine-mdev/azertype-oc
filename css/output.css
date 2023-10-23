@@ -546,8 +546,8 @@ video {
   margin-top: 1rem;
 }
 
-.mt-6{
-  margin-top: 1.5rem;
+.mt-5{
+  margin-top: 1.25rem;
 }
 
 .mt-8{
@@ -690,6 +690,18 @@ input[type="email"]{
   margin-left: 1rem;
 }
 
+::-moz-placeholder{
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+::placeholder{
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .zoneDeBouton button:first-child{
   border-width: 1px;
   --tw-border-opacity: 1;
@@ -782,8 +794,14 @@ footer p{
     gap: 2rem;
   }
 
-  .lg\:p-8{
-    padding: 2rem;
+  .lg\:px-8{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .lg\:py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .lg\:text-titre{

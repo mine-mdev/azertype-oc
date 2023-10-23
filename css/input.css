@@ -38,7 +38,9 @@ input[type="email"] {
     @apply ml-4;
 }
 
-
+::placeholder {
+    @apply font-nunito font-light text-texte_mobile
+}
 
 .zoneDeBouton button:first-child {
     @apply text-primaire border border-primaire;
@@ -52,6 +54,8 @@ input[type="email"] {
 .zoneDeBouton button:last-child {
     @apply ml-2
 }
+
+
 
 .desactive {
     @apply bg-secondaire/30;

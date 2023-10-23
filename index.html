@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" prefix="og: https://opg.me/ns#">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset=" UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application en ligne pour apprendre à taper plus vite au clavier.">
+    <meta property="og:title" content="AZERTYPE, L'application pour écrire plus vite !">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="website">
+    <meta property="og:image" content="images/type.png">
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <title>Document</title>
+    <title>AZERTYPE</title>
+    <script src="js/gsap.min.js" defer></script>
     <script src="js/config.js" defer></script>
     <script src="js/form.js" defer></script>
     <script src="js/script.js" defer></script>
@@ -15,7 +21,7 @@
 
 <body class="text-texte_mobile md:text-texte text-secondaire">
     <div class="h-screen relative">
-        <div class="grid lg:grid-cols-3 lg:gap-8 lg:h-full p-4 lg:p-8">
+        <div class="grid lg:grid-cols-3 lg:gap-8 lg:h-full p-4 lg:px-8 lg:py-4">
             <div class="lg:col-span-1 ">
                 <img src="images/type.png" alt="type.png" class="w-2/3 lg:w-full">
             </div>
@@ -29,12 +35,14 @@
                         </h1>
                     </header>
                     <main class="mt-4 ">
-                        <p>
-                            AzertType est une application en ligne pour apprendre à taper plus vite au clavier.
-                        </p>
-                        <p>
-                            Choisissez une option et tapez la proposition qui s'affiche dans le champs ci-dessous.
-                        </p>
+                        <div class="intro">
+                            <p>
+                                AzertType est une application en ligne pour apprendre à taper plus vite au clavier.
+                            </p>
+                            <p>
+                                Choisissez une option et tapez la proposition qui s'affiche dans le champs ci-dessous.
+                            </p>
+                        </div>
                         <div class="zoneDeChoix mt-8">
                             <input type="radio" name="option" id="mots" value="mots" checked>
                             <label for="mots"> Mots</label>
@@ -42,14 +50,17 @@
                             <label for="phrases"> Phrases</label>
                         </div>
 
-                        <div class="zoneDeProposition mt-6"></div>
+                        <div class="zoneDeProposition mt-5"></div>
 
                         <div class="zoneDeSaisie mt-4 flex items-center ">
                             <input type="text">
                             <button class="active" id="validation">
                                 Valider </button>
                         </div>
-                        <div class="zoneDeScore mt-4"></div>
+
+                        <div class="zoneDeScore mt-4 "></div>
+                        <div class="zoneDeCompteur mt-4"> Compteur : <span></span> </div>
+
                         <div class="zoneDeBouton hidden  mt-4 animate__animated animate__headShake">
                             <button class="transition ease-out duration-500  hover:shadow-2xl">Partager</button>
                             <button class="transition ease-out duration-500  hover:shadow-2xl ">Rejouer</button>
