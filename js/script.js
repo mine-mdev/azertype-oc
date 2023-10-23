@@ -83,8 +83,9 @@ function afficherScore(score, total) {
 
 function afficherCompteur() {
     let zoneDeCompteur = document.querySelector(".zoneDeCompteur")
+    compteur = compteur < 10 ? "0" + compteur : compteur
     zoneDeCompteur.innerText = `Compteur: ${compteur}`
-
+    compteur = Number(compteur)
     if (compteur > 0) {
         compteur--
     } else if (compteur === 0) {
@@ -124,14 +125,14 @@ function lancerJeu() {
 
     for (let j = 0; j < listeInputRadioChoix.length; j++) {
         listeInputRadioChoix[j].addEventListener("change", (event) => {
-            if (compteur !== 0) {
-                let choix = event.target.value;
-                if (choix === "mots") {
+            let choix = event.target.value;
+            if (choix === "mots") {
 
-                    listePropositions = listeMots
-                } else {
-                    listePropositions = listPhrases
-                }
+                listePropositions = listeMots
+            } else {
+                listePropositions = listPhrases
+            }
+            if (compteur !== 0) {
                 afficherProposition(listePropositions[i])
             }
         })
