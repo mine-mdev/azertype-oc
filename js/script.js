@@ -84,18 +84,19 @@ function afficherScore(score, total) {
 function afficherCompteur() {
     let zoneDeCompteur = document.querySelector(".zoneDeCompteur")
     zoneDeCompteur.innerText = `Compteur: ${compteur}`
-    if (compteur === 0) {
+
+    if (compteur > 0) {
+        compteur--
+    } else if (compteur === 0) {
         clearInterval(setIntervalID)
         terminerJeu()
         afficherProposition("Le jeu est terminé !")
     }
-    compteur--
+
 }
 
 function afficherProposition(proposition) {
     let zoneDeProposition = document.querySelector(".zoneDeProposition")
-    proposition = proposition === undefined ? "Le jeu est terminé !" : proposition
-
     zoneDeProposition.innerText = proposition
 }
 
@@ -123,13 +124,16 @@ function lancerJeu() {
 
     for (let j = 0; j < listeInputRadioChoix.length; j++) {
         listeInputRadioChoix[j].addEventListener("change", (event) => {
-            let choix = event.target.value;
-            if (choix === "mots") {
-                listePropositions = listeMots
-            } else {
-                listePropositions = listPhrases
+            if (compteur !== 0) {
+                let choix = event.target.value;
+                if (choix === "mots") {
+
+                    listePropositions = listeMots
+                } else {
+                    listePropositions = listPhrases
+                }
+                afficherProposition(listePropositions[i])
             }
-            afficherProposition(listePropositions[i])
         })
     }
 

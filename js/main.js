@@ -12,12 +12,3 @@ tl.from(".zoneDeCompteur", { y: 20, opacity: 0, duration: 0.25 })
 
 lancerJeu()
 
-
-/*
-let setIntervalId = setInterval(() => {
-    compteur--
-    console.log(compteur);
-    if (compteur === 0) {
-        clearInterval(setIntervalId)
-    }
-}, 1000)*/
