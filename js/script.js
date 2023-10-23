@@ -1,4 +1,9 @@
-let i = 0
+function genererNombreAleatoire() {
+    return Math.floor(Math.random() * 10) + 1
+}
+
+let i = genererNombreAleatoire()
+let k = 0
 let score = 0
 let compteur = 30
 let setIntervalID = null;
@@ -8,9 +13,11 @@ let boutonValidation = document.querySelector(".zoneDeSaisie button")
 let inputTextSaisie = document.querySelector(".zoneDeSaisie input[type='text']")
 let div = document.querySelector(".zoneDeBouton")
 
+
 function rejouerJeu() {
     score = 0
-    i = 0
+    i = genererNombreAleatoire()
+    k = 0
     compteur = 30
     setIntervalID = null
     inputTextSaisie.disabled = false
@@ -28,7 +35,7 @@ function rejouerJeu() {
     inputTextSaisie.focus()
     afficherCompteur()
     afficherProposition(listePropositions[i])
-    afficherScore(score, i)
+    afficherScore(score, k)
 }
 
 function terminerJeu() {
@@ -110,7 +117,7 @@ function lancerJeu() {
 
     inputTextSaisie.focus()
 
-    afficherScore(score, i)
+    afficherScore(score, k)
     afficherCompteur()
     afficherProposition(listePropositions[i])
 
@@ -137,19 +144,16 @@ function lancerJeu() {
         }
 
         inputTextSaisie.value = ""
-        i++
-        afficherScore(score, i)
+        i = genererNombreAleatoire()
+        k++
+        afficherScore(score, k)
         inputTextSaisie.focus()
-
-        if (listePropositions[i] === undefined) {
-            terminerJeu()
-        }
         afficherProposition(listePropositions[i])
     })
 
     formulaire.addEventListener("submit", (event) => {
         event.preventDefault()
-        let emailScore = `${score}/${i}`
+        let emailScore = `${score}/${k}`
         gererFormulaire(emailScore)
     })
 
