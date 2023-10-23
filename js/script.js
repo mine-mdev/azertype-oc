@@ -84,7 +84,7 @@ function afficherScore(score, total) {
 function afficherCompteur() {
     let zoneDeCompteur = document.querySelector(".zoneDeCompteur")
     compteur = compteur < 10 ? "0" + compteur : compteur
-    zoneDeCompteur.innerText = `Compteur: ${compteur}`
+    zoneDeCompteur.innerText = `Temps restants: ${compteur}`
     compteur = Number(compteur)
     if (compteur > 0) {
         compteur--
